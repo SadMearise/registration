@@ -31,6 +31,10 @@
 	}
 
 	&__step {
+		display: none;
+		&.active {
+			display: block;
+		}
 	}
 
 	&__title-block {
@@ -147,6 +151,7 @@
 		display: flex;
 		align-items: center;
 		gap: 10px;
+		margin-bottom: 10px;
 	}
 
 	&__name-block {
@@ -154,7 +159,9 @@
 	}
 
 	&__textarea {
-		margin-top: 10px;
+	}
+	*:last-child {
+		margin-bottom: 0;
 	}
 }
 
@@ -174,6 +181,12 @@
 	}
 
 	&__success {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 2px;
+		background-color: $color-red;
+		@include anim(.5s, 0s);
 	}
 
 	&__steps {
@@ -206,12 +219,23 @@
 			width: 100%;
 			height: auto;
 		}
+		&.active {
+			background-color: $color-red;
+			border-color: $color-red;
+			@include anim(1s, 0s);
+			svg {
+				path {
+					fill: $color-white;
+					@include anim(1s, 0s);
+				}
+			}
+		}
 	}
 }
 
 .file-uploader {
-	background: #F3F6F9;
-	border: 2px dashed #051655;
+	background: $color-gray-50;
+	border: 2px dashed $color-blue;
 	position: relative;
 	max-width: 360px;
 	width: 32.143%;
@@ -240,5 +264,31 @@
 	}
 
 	&__text {
+	}
+}
+
+.finish {
+	display: none;
+	max-width: 600px;
+	&__image {
+		margin: 40px 0;
+	}
+
+	&__title-block {
+		margin-bottom: 40px;
+	}
+
+	&__subtitle {
+		margin-bottom: 10px;
+	}
+
+	&__text {
+		margin-bottom: 60px;
+		p + p {
+			margin-top: 10px;
+		}
+	}
+
+	&__button {
 	}
 }

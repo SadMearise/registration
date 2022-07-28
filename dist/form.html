@@ -59,7 +59,7 @@
 							</ul>
 						</div>
 						<div class="form__steps">
-							<div class="form__step" style="display: none;">
+							<div class="form__step">
 								<div class="form__title-block title-block">
 									<h2 class="title-block__title">Which Hub Are You In?</h2>
 									<p class="title-block__text">We are active in major cities and we schedule meetings based on time zones. Let us know your home base.</p>
@@ -150,7 +150,7 @@
 									</ul>
 								</div>
 							</div>
-							<div class="form__step" style="display: none;">
+							<div class="form__step">
 								<div class="form__title-block title-block">
 									<h2 class="title-block__title">What Are Your Objectives?</h2>
 									<p class="title-block__text">Select up to 3 objectives. These will be kept private from other users but help us find relevant matches.</p>
@@ -306,7 +306,7 @@
 									</ul>
 								</div>
 							</div>
-							<div class="form__step" style="display: none;">
+							<div class="form__step">
 								<div class="form__title-block title-block">
 									<h2 class="title-block__title">Fill Your Profile</h2>
 									<p class="title-block__text">This basic information will be shown to your matches every week. Tell us what you would like to show!</p>
@@ -326,27 +326,25 @@
 									<div class="form__profiles">
 										<h3 class="form__subtitle text4">Other Profile</h3>
 										<div class="form__profile input-block">
-											<label class="input-block__label visually-hidden" for="linkedin">LinkedIn URL</label>
-											<div class="input-block__icon">
-												<svg class="svg-linkedin-dims">
+											<label class="input-block__label">
+												<svg class="input-block__icon svg-linkedin-dims">
 													<use xlink:href="./img/icons/icons.svg#linkedin"></use>
 												</svg>
-											</div>
-											<input class="input-block__input text2" id="linkedin" type="text" placeholder="LinkedIn URL">
+												<input class="input-block__input text2" id="linkedin" type="text" placeholder="LinkedIn URL">
+											</label>
 										</div>
 										<div class="form__profile input-block">
-											<label class="input-block__label visually-hidden" for="twitter">Twitter URL</label>
-											<div class="input-block__icon">
-												<svg class="svg-twitter-dims">
+											<label class="input-block__label">
+												<svg class="input-block__icon svg-twitter-dims">
 													<use xlink:href="./img/icons/icons.svg#twitter"></use>
 												</svg>
-											</div>
-											<input class="input-block__input text2" id="twitter" type="text" placeholder="Twitter URL">
+												<input class="input-block__input text2" id="twitter" type="text" placeholder="Twitter URL">
+											</label>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="form__step" style="display: none;">
+							<div class="form__step">
 								<div class="form__title-block title-block">
 									<h2 class="title-block__title">What Are You Interested In?</h2>
 									<p class="title-block__text">Select from the list and add your own interests.</p>
@@ -470,7 +468,7 @@
 												<label class="checkbox-blue__label text6" for="lifestyle11">Wellness</label>
 											</li>
 											<li class="form__category-item checkbox-blue">
-												<input class="checkbox-blue__checkbox" required name="lifestyle" value="lifestyle12" type="checkbox" id="lifestyle126">
+												<input class="checkbox-blue__checkbox" required name="lifestyle" value="lifestyle12" type="checkbox" id="lifestyle12">
 												<label class="checkbox-blue__label text6" for="lifestyle12">Parenting</label>
 											</li>
 										</ul>
@@ -514,6 +512,26 @@
 						<button class="form__btn-next btn btn--next">Next</button>
 					</div>
 				</form>
+				<div class="finish">
+					<div class="finish__image">
+						<img src="./img/finish/google.png" alt="google">
+					</div>
+					<div class="finish__title-block title-block">
+						<h2 class="title-block__title">Finish Your Registration</h2>
+						<p class="title-block__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis autem, velit nostrum laudantium saepe dolor dolorem qui corporis modi iusto quam ipsam magni doloribus quae optio molestiae beatae labore commodi?</p>
+					</div>
+					<h3 class="finish__subtitle text4">Why Connect My Google Account?</h3>
+					<div class="finish__text text7">
+						<p>Your contact and calendar data helps us schedule meetings and ensure that your matches are relevant (not matching you with people you already know, for instance).</p>
+						<p>We’re serious about your privacy and will never share your private data with other users or third parties without your consent.</p>
+					</div>
+					<a aria-label="finish sign up with google" href="#" class="finish__button btn btn--finish">
+						<svg class="svg-google-dims">
+							<use xlink:href="./img/icons/icons.svg#google"></use>
+						</svg>
+						Finish Sign Up With Google
+					</a>
+				</div>
 			</div>
 		</main>
 	</div>
