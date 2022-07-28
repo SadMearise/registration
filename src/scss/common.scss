@@ -124,6 +124,7 @@
     	display: flex;
 		align-items: center;
 		border: 1px solid $color-gray-200;
+		user-select: none;
 	}
 
 	&__icon {
@@ -139,14 +140,24 @@
 		height: 58px;
 		padding-left: 15px;
 	}
-}
-.svg-search-dims {
-}
-.text2 {
-}
 
+	&__label-area {
+		user-select: none;
+	}
 
-
+	&__textarea {
+		display: block;
+		width: 100%;
+		min-width: 100%;
+		min-height: 240px;
+		max-height: 400px;
+		padding: 20px 30px;
+		border: 1px solid $color-gray-200;
+		&:focus {
+			border-color: $color-blue;
+		}
+	}
+}
 
 .select-box {
 	&__container {

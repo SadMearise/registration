@@ -138,6 +138,24 @@
 
 	&__category-item {
 	}
+
+	&__text-form {
+		max-width: 930px;
+	}
+
+	&__fields-row {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	&__name-block {
+		flex: 0 1 460px;
+	}
+
+	&__textarea {
+		margin-top: 10px;
+	}
 }
 
 .progress {
@@ -224,4 +242,3 @@
 	&__text {
 	}
 }
-
