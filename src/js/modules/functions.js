@@ -21,6 +21,26 @@ export function ibg() {
     }
 }
 
+export function activeRadioClass() {
+	const radio = document.querySelector('.form__radio-list');
+	radio.addEventListener('click', e => {
+		if (e.target.closest('.form__radio-item') && e.target.tagName !== 'INPUT') {
+			document.querySelectorAll('.form__radio-item').forEach(n => n.classList.remove('active'));
+			e.target.closest('.form__radio-item').classList.add('active');
+		}
+	})
+}
+
+export function activeCheckboxClass() {
+	const checkbox = document.querySelector('.form__check-list');
+	checkbox.addEventListener('click', e => {
+		if (e.target.closest('.form__checkbox-item') && e.target.tagName !== 'INPUT') {
+			e.target.closest('.form__checkbox-item').classList.toggle('active');
+		}
+	})
+}
+
+
 export function stepForm() {
 	const form = document.querySelector('.registration__form');
 	const finish = document.querySelector('.finish');
@@ -70,6 +90,8 @@ export function stepForm() {
 		}
 
 		const actives = document.querySelectorAll('.progress__step.active');
+		const screenWidth = window.screen.width;
+		
 		const percent = ((actives.length - 1) / (progressStep.length - 1)) * 100 + "%";
 		progressSuccess.style.width = percent;
 	}

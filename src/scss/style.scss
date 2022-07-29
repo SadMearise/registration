@@ -126,11 +126,15 @@ body {
 		padding-bottom: 0px;
 
 	}
-	@media (max-width: $breakpoint1200) {
-	}
-	@media (max-width: $breakpoint992) {
-	}
-	@media (max-width: $breakpoint768) {
+	@media (max-width: em($breakpoint576)) {
+		&--s {
+			padding-top: 20px;
+			padding-bottom: 25px;
+		}
+		&--m {
+			padding-top: 34px;
+			padding-bottom: 30px;
+		}
 	}
 }
 
@@ -145,10 +149,8 @@ body {
 
 @import "base/ui";
 @import "common";
-@import "header";
 @import "home";
 @import "form";
-@import "footer";
 
 // Основные элементы
 // Пример: 

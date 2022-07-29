@@ -31,16 +31,20 @@
 		color: $color-blue;
 		background-color: $color-white;
 		border: 1px solid $color-gray-200;
-		max-width: 140px;
 		&:hover {
 			background-color: $color-blue;
 			color: $color-white;
+		}
+		@media (min-width: em($breakpoint576)) {
+			max-width: 140px;
 		}
 	}
 
 	&--next {
 		padding: 18px 49px;
-		max-width: 140px;
+		@media (min-width: em($breakpoint576)) {
+			max-width: 140px;
+		}
 	}
 
 	&--finish {
@@ -77,6 +81,7 @@
 	line-height: $l-h-5;
 	color: $color-blue;
 }
+
 .text5 {
 	font-weight: $fw-m;
 	font-size: $fz-s;
@@ -116,6 +121,9 @@
 		font-size: $fz-s;
 		line-height: $l-h-2;
 		color: $color-gray-500;
+	}
+	@media (max-width: em($breakpoint576)) {
+		text-align: center;
 	}
 }
 
@@ -165,7 +173,7 @@
 		display: block;
 		width: 100%;
 		min-width: 100%;
-		max-width: 930px;
+		max-width: 100%;
 		min-height: 240px;
 		max-height: 400px;
 		padding: 20px 30px;
@@ -177,7 +185,32 @@
 }
 
 .select-box {
+	&.active {
+		.select-box__container {
+			background: $color-white;
+			border: 1px solid $color-red;
+		}
+		.select-box__custom-radio-button {
+			border-color: $color-red;
+			&::before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 20px;
+				height: 20px;
+				background-color: $color-red;
+				border-radius: 100%;
+			}
+		}
+		.select-box__custom-checkbox {
+			border-color: $color-red;
+			background: $color-red url("../img/step2/check-mark.svg") 50% no-repeat;
+		}
+	}
 	&__container {
+		position: relative;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -193,6 +226,7 @@
 		width: 60px;
 		height: 60px;
 		background-color: $color-white;
+		flex: 0 0 60px;
 		img {
 			position: absolute;
 			top: 50%;
@@ -207,7 +241,10 @@
 		justify-content: space-between;
 		flex: 1 0 auto;
 		user-select: none;
-		
+		max-width: 100%;
+		position: absolute;
+		left: 90px;
+		right: 25px;
 	}
 
 	&__radio-button {
@@ -216,20 +253,6 @@
 		position: absolute;
 		opacity: 0;
 		z-index: -1;
-		&:checked + .select-box__custom-radio-button {
-			border-color: $color-red;
-			&::before {
-				content: '';
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				width: 20px;
-				height: 20px;
-				background-color: $color-red;
-				border-radius: 100%;
-			}
-		}
 	}
 
 	&__custom-radio-button {
@@ -240,6 +263,7 @@
 		background-color: $color-white;
 		border: 1px solid $color-gray-200;
 		border-radius: 100%;
+		flex: 0 0 30px;
 	}
 
 	&__checkbox {
@@ -248,10 +272,6 @@
 		position: absolute;
 		opacity: 0;
 		z-index: -1;
-		&:checked + .select-box__custom-checkbox {
-			border-color: $color-red;
-			background: $color-red url("../img/step2/check-mark.svg") 50% no-repeat;
-		}
 	}
 
 	&__custom-checkbox {
@@ -262,7 +282,7 @@
 		background-color: $color-white;
 		border: 1px solid $color-gray-200;
 		border-radius: 5px;
-		
+		flex: 0 0 30px;
 	}
 }
 

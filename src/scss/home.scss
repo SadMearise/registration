@@ -1,15 +1,26 @@
 .main-screen {
 	display: flex;
+	@media (max-width: em($breakpoint576)) {
+		flex-direction: column;
+		height: 100vh;
+	}
 	&__column {
 		flex: 0 1 50%;
+		
 		&:first-child {
 			position: relative;
 			width: 50vw;
 			height: 100vh;
+			@media (max-width: em($breakpoint576)) {
+				width: 100vw;
+			}
 		}
 		&:last-child {
 			display: flex;
 			flex-direction: column;
+		}
+		@media (max-width: em($breakpoint576)) {
+			align-items: center;
 		}
 	}
 
@@ -20,6 +31,9 @@
 
 	&__logo {
 		margin-bottom: 88px;
+		@media (max-width: em($breakpoint576)) {
+			margin-bottom: 30px;
+		}
 	}
 
 	&__title-block {
@@ -28,6 +42,7 @@
 
 	&__button {
 		max-width: 250px;
+		margin-bottom: 10px;
 	}
 
 	&__sign-in {
@@ -41,5 +56,9 @@
 	}
 
 	&__link-footer {
+	}
+	
+	*:last-child {
+		margin-bottom: 0;
 	}
 }

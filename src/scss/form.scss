@@ -4,6 +4,9 @@
 	min-height: 100vh;
 	&__logo {
 		margin-bottom: 89px;
+		@media (max-width: em($breakpoint576)) {
+			margin-bottom: 30px;
+		}
 	}
 
 	&__form {
@@ -16,15 +19,14 @@
 	flex-direction: column;
 	&__content {
 		flex: 1 0 auto;
-		@media (max-width: em($breakpoint576)) {
-			display: flex;
-			flex-direction: row-reverse;
-		}
 	}
 
 	&__progress {
 		max-width: 650px;
 		margin-bottom: 60px;
+		@media (max-width: em($breakpoint576)) {
+			margin-bottom: 30px;
+		}
 	}
 
 	&__steps {
@@ -94,9 +96,14 @@
 
 	&__btns {
 		display: flex;
-		column-gap: 20px;
+		gap: 20px;
 		font-size: 0;
 		margin-top: 60px;
+		@media (max-width: em($breakpoint576)) {
+			margin-top: 30px;
+			flex-direction: column;
+			justify-content: center;
+		}
 	}
 
 	&__btn-prev {
@@ -107,8 +114,11 @@
 
 	&__upload-block {
 		display: flex;
-		column-gap: 40px;
+		gap: 40px;
 		max-width: 1120px;
+		@media (max-width: em($breakpoint576)) {
+			flex-direction: column;
+		}
 	}
 
 	&__upload {
@@ -138,6 +148,9 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 10px;
+		@media (max-width: em($breakpoint576)) {
+			justify-content: space-around;
+		}
 	}
 
 	&__category-item {
@@ -152,10 +165,17 @@
 		align-items: center;
 		gap: 10px;
 		margin-bottom: 10px;
+		@media (max-width: em($breakpoint576)) {
+			flex-direction: column;
+		}
 	}
 
 	&__name-block {
 		flex: 0 1 460px;
+		@media (max-width: em($breakpoint576)) {
+			flex-basis: auto;
+			width: 100%;
+		}
 	}
 
 	&__textarea {
@@ -169,7 +189,6 @@
 	position: relative;
 	height: 50px;
 	width: 100%;
-
 	&__line {
 		position: absolute;
 		width: 100%;
@@ -178,6 +197,7 @@
 		top: 50%;
 		transform: translateY(-50%);
 		z-index: 1;
+
 	}
 
 	&__success {
@@ -185,6 +205,7 @@
 		top: 0;
 		left: 0;
 		height: 2px;
+		width: 100%;
 		background-color: $color-red;
 		@include anim(.5s, 0s);
 	}
@@ -230,6 +251,10 @@
 				}
 			}
 		}
+		@media (max-width: em($breakpoint576)) {
+			width: 35px;
+			height: 35px;
+		}
 	}
 }
 
@@ -241,7 +266,14 @@
 	width: 32.143%;
 	height: 0;
 	padding-top: 31.786%;
-
+	@media (max-width: em($breakpoint576)) {
+		margin: 0 auto;
+		width: 50vw;
+		height: 50vw;
+		min-width: 220px;
+		min-height: 220px;
+	}
+	
 	&__label {
 		display: flex;
 		flex-direction: column;
@@ -254,6 +286,9 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
+		@media (max-width: em($breakpoint576)) {
+			row-gap: 20px;
+		}
 	}
 
 	&__input {
@@ -270,6 +305,9 @@
 .finish {
 	display: none;
 	max-width: 600px;
+	@media (max-width: em($breakpoint576)) {
+		text-align: center;
+	}
 	&__image {
 		margin: 40px 0;
 	}
@@ -290,5 +328,8 @@
 	}
 
 	&__button {
+		@media (max-width: em($breakpoint576)) {
+			text-align: left;
+		}
 	}
 }
