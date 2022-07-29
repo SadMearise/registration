@@ -50,8 +50,6 @@ export function stepForm() {
 	const progressStep = document.querySelectorAll('.progress__step');
 	const progressSuccess = document.querySelector('.progress__success');
 	
-	form.addEventListener('submit', (e) => e.preventDefault())
-
 	let formStepIndex = 0;
 
 	prevBtn.addEventListener('click', () => {
@@ -90,7 +88,6 @@ export function stepForm() {
 		}
 
 		const actives = document.querySelectorAll('.progress__step.active');
-		const screenWidth = window.screen.width;
 		
 		const percent = ((actives.length - 1) / (progressStep.length - 1)) * 100 + "%";
 		progressSuccess.style.width = percent;
