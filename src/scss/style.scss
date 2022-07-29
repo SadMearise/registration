@@ -99,7 +99,8 @@ body {
 		max-width: (760 + $containerPadding) + px;
 		margin: 0;
 		@media (min-width: em($breakpoint992)) {
-			padding: 0 100px;
+			padding-left: 100px;
+			padding-right: 100px;
 		}
 	}
 }
