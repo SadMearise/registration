@@ -139,36 +139,7 @@ body {
 	}
 }
 
-// классы для вставки 
-// vertical-indent vertical-indent--xs
-// vertical-indent vertical-indent--s
-// vertical-indent vertical-indent--m
-// vertical-indent vertical-indent--l
-// vertical-indent vertical-indent--xl
-
-// Подключение файлов/стилей/страниц и элементов
-
 @import "base/ui";
 @import "common";
 @import "home";
 @import "form";
-
-// Основные элементы
-// Пример: 
-
-// <-- HTML -->
-// <main class="page page__home">
-// 	<section class="page__main-block"></section>
-// </main>
-// <-- / HTML -->
-
-// <-- CSS -->
-// .page {
-
-// 	&__home {
-// 	}
-
-// 	&__main-block {
-// 	}
-// }
-// <-- / CSS -->
