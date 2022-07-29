@@ -23,21 +23,25 @@ export function ibg() {
 
 export function activeRadioClass() {
 	const radio = document.querySelector('.form__radio-list');
-	radio.addEventListener('click', e => {
-		if (e.target.closest('.form__radio-item') && e.target.tagName !== 'INPUT') {
-			document.querySelectorAll('.form__radio-item').forEach(n => n.classList.remove('active'));
-			e.target.closest('.form__radio-item').classList.add('active');
-		}
-	})
+	if(radio) {
+		radio.addEventListener('click', e => {
+			if (e.target.closest('.form__radio-item') && e.target.tagName !== 'INPUT') {
+				document.querySelectorAll('.form__radio-item').forEach(n => n.classList.remove('active'));
+				e.target.closest('.form__radio-item').classList.add('active');
+			}
+		})
+	}
 }
 
 export function activeCheckboxClass() {
 	const checkbox = document.querySelector('.form__check-list');
-	checkbox.addEventListener('click', e => {
-		if (e.target.closest('.form__checkbox-item') && e.target.tagName !== 'INPUT') {
-			e.target.closest('.form__checkbox-item').classList.toggle('active');
-		}
-	})
+	if(checkbox) {
+		checkbox.addEventListener('click', e => {
+			if (e.target.closest('.form__checkbox-item') && e.target.tagName !== 'INPUT') {
+				e.target.closest('.form__checkbox-item').classList.toggle('active');
+			}
+		})
+	}
 }
 
 
@@ -52,23 +56,27 @@ export function stepForm() {
 	
 	let formStepIndex = 0;
 
-	prevBtn.addEventListener('click', () => {
-		formStepIndex--;
-
-		progressStep[formStepIndex + 1].classList.remove('active');
-
-		updateformSteps();
-	})
-
-	nextBtn.addEventListener('click', () => {
-		if (formStepIndex < steps.length - 1) {
-			formStepIndex++;
+	if (prevBtn) {
+		prevBtn.addEventListener('click', () => {
+			formStepIndex--;
+	
+			progressStep[formStepIndex + 1].classList.remove('active');
+	
 			updateformSteps();
-		} else if (formStepIndex === steps.length - 1) {
-			form.style.display = 'none';
-			finish.style.display = 'block';
-		}
-	})
+		})
+	}
+	
+	if (nextBtn) {
+		nextBtn.addEventListener('click', () => {
+			if (formStepIndex < steps.length - 1) {
+				formStepIndex++;
+				updateformSteps();
+			} else if (formStepIndex === steps.length - 1) {
+				form.style.display = 'none';
+				finish.style.display = 'block';
+			}
+		})
+	}
 
 	function updateformSteps() {
 		steps.forEach(step => {
@@ -93,7 +101,7 @@ export function stepForm() {
 		progressSuccess.style.width = percent;
 	}
 
-	if (steps) {
+	if (Object.entries(steps).length !== 0) {
 		updateformSteps();
 	}
 }
