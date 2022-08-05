@@ -10,15 +10,19 @@
 	line-height: $l-h-3;
 	color: $color-white;
 	border: 1px solid transparent;
-	max-height: 60px;
+	min-height: 60px;
 	@include anim(.3s, 0s);
+	width: fit-content;
+	min-width: 100px;
+	cursor: pointer;
 	&:hover {
 		background-color: darken($color-red, 10%);
 	}
 	&--main {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: center;
+		column-gap: 41px;
 		svg {
 			max-width: 24px;
 			max-height: 24px;
@@ -35,16 +39,16 @@
 			background-color: $color-blue;
 			color: $color-white;
 		}
-		@media (min-width: em($breakpoint576)) {
-			max-width: 140px;
-		}
+		// @media (min-width: em($breakpoint576)) {
+		// 	max-width: 140px;
+		// }
 	}
 
 	&--next {
 		padding: 18px 49px;
-		@media (min-width: em($breakpoint576)) {
-			max-width: 140px;
-		}
+		// @media (min-width: em($breakpoint576)) {
+		// 	max-width: 140px;
+		// }
 	}
 
 	&--finish {
